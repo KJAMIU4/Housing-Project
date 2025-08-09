@@ -1,0 +1,102 @@
+
+# 🏠 Housing Price Prediction
+
+This project builds and evaluates machine learning models to predict housing prices based on various property features such as location, size, and amenities.  
+It uses **Python**, **Pandas**, **Matplotlib**, **Seaborn**, and **Scikit-learn**.
+
+## 📌 Project Overview
+The workflow includes:
+1. **Data Loading** – Reads the `Housing.csv` dataset.
+2. **Preprocessing** – Encodes categorical variables, converts binary Yes/No features to integers.
+3. **Feature Engineering** – Creates new ratio-based features for better predictions.
+4. **Exploratory Data Analysis (EDA)** – Uses heatmaps and visualizations to study correlations.
+5. **Model Training** – Trains two models:
+   - Linear Regression
+   - Random Forest Regressor (with hyperparameter tuning using GridSearchCV)
+6. **Evaluation** – Compares model performance using R², MAE, and RMSE.
+7. **Feature Importance Analysis** – Ranks features that most influence housing prices.
+
+---
+
+## 📂 Project Structure
+.
+├── Housing.csv              # Dataset (not included in repo if private)
+├── housing_price_prediction.py  # Main Python script / notebook
+├── README.md                # Project documentation
+
+---
+
+## ⚙️ Installation & Requirements
+**Python Version:** 3.8 or above
+
+Install dependencies:
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+```
+
+---
+
+## ▶️ How to Run
+1. Place `Housing.csv` in the same directory as the script.
+2. Run the script or Jupyter Notebook:
+```bash
+python housing_price_prediction.py
+```
+3. The script will:
+   - Preprocess the data
+   - Perform EDA
+   - Train models
+   - Display evaluation metrics
+   - Show feature importance plots
+
+---
+
+## 🛠 Data Preprocessing Steps
+- **Categorical Encoding:**  
+  `furnishingstatus` is converted into multiple binary columns (0/1) using one-hot encoding.
+- **Binary Mapping:**  
+  Columns like `basement`, `prefarea`, `mainroad`, etc. are mapped from Yes/No to 1/0.
+- **Feature Engineering:**  
+  - `price_per_sqft` = price / area
+  - `bathrooms_per_bedroom` = bathrooms / (bedrooms + 1)
+  - `bedrooms_per_area` = bedrooms / area
+
+---
+
+## 📊 Models & Evaluation
+### Linear Regression:
+- **Scaled** features using `StandardScaler`
+- Metrics: R², MAE, RMSE
+
+### Random Forest Regressor:
+- Tuned using `GridSearchCV`
+- Metrics: Train R², Test R²
+- Feature importances visualized with Seaborn
+
+---
+
+## 📈 Example Output
+- **Correlation Heatmap**
+- **Predicted vs Actual Scatter Plot**
+- **Feature Importance Plot**
+
+---
+
+## 📌 Future Improvements
+- Add cross-validation for Linear Regression
+- Try Gradient Boosting / XGBoost models
+- Perform feature selection based on importance scores
+- Deploy model as an API or web app
+
+---
+
+## 📌 Author
+Jamiu Kareem
+📧 kjamiu4@gmail.com
+
+---
+
+## 📝 License
+This project is for educational purposes. Modify and adapt as needed.
+README.md
+
